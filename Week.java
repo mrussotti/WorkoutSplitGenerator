@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.ArrayList;
 
 public class Week
 {
@@ -97,6 +98,8 @@ public class Week
         glutes.MAVMin = 4;
         glutes.MAVMax = 12;
         glutes.MRV = 16;
+
+//Add info for specific back muscles
 */
     }
 
@@ -117,10 +120,40 @@ public class Week
 
         weeklyFatigue.put("abs", 0);
         weeklyFatigue.put("calves", 0);
+
+        weeklyFatigue.put("lats", 0);
+        weeklyFatigue.put("rhomboids", 0);
+        weeklyFatigue.put("traps", 0);
+        weeklyFatigue.put("spineErectors", 0);
     }
 
     public static void printWeeklyFatigue()
     {
         System.out.println(weeklyFatigue);
+    }
+    //Add stuff for specific muscles in triceps and biceps
+    public static List<Exercise> addExercises() {
+      List<Exercise> exercises = new ArrayList<>();
+      exercises.add(new Exercise("Bench Press", List.of("chest", "triceps", "frontDelts")));
+      exercises.add(new Exercise("Barbell Curl", List.of("biceps")));
+      exercises.add(new Exercise("Cable Tricep Extension", List.of("triceps")));
+      exercises.add(new Exercise("Seated Calf Raise", List.of("calves")));
+      exercises.add(new Exercise("Deadlift", List.of("lats", "rhomboids", "traps", "spinalErectors", "hamstrings", "glutes", "forearms")));
+      exercises.add(new Exercise("Squat", List.of("quads", "hamstrings", "glutes", "lower back")));
+      exercises.add(new Exercise("Lunges", List.of("quads", "hamstrings", "glutes")));
+      exercises.add(new Exercise("Leg Press", List.of("quads", "hamstrings")));
+      exercises.add(new Exercise("Shoulder Press", List.of("frontDelts", "sideDelts", "triceps")));
+      exercises.add(new Exercise("Push-ups", List.of("chest", "triceps", "frontDelts")));
+      exercises.add(new Exercise("Pull-ups", List.of("lats", "rhomboids", "traps")));
+      exercises.add(new Exercise("Lat Pulldown", List.of("lats", "rhomboids")));
+      exercises.add(new Exercise("Seated Row", List.of("lats", "rhomboids", "traps")));
+      exercises.add(new Exercise("Bicep Curl", List.of("biceps")));
+      exercises.add(new Exercise("Tricep Dips", List.of("triceps")));
+      exercises.add(new Exercise("Crunches", List.of("abs")));
+      exercises.add(new Exercise("Plank", List.of("abs")));
+      exercises.add(new Exercise("Side Plank", List.of("abs")));
+    
+      
+      return exercises;
     }
 }
