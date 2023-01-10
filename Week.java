@@ -1,25 +1,13 @@
-using System;
-using System.Collections.Generic;
+import java.util.*;
 
-public struct muscleGroup
-{
-    public string name;
-    public int MV; //MV = Maintenance Volume, maintain current size
-    public int MEV;//MEV = Minimum Effective Volume, least work to do to grow muscles
-    public int MAVMin;//MAV = Maximum Adaptive Volume, range of volumes that you make the best gains, bottom of the range
-    public int MAVMax;//MAV = Maximum Adaptive Volume, top of the range
-    public int MRV;//MRV = Maximum Recoverable Volume, work up to this
-
-};
-
-class Program
+public class Week
 {
 
-    public static Dictionary<string, int> weeklyFatigue;//turn this into an array, one weekly fatigue variable for each week of the split
+     private static Map<String, Integer> weeklyFatigue;//turn this into an array, one weekly fatigue variable for each week of the split
 
-    public static void Main(string[] args)
+    public Week()
     {
-        weeklyFatigue = new Dictionary<string, int>();
+        weeklyFatigue= new HashMap<String, Integer>();                
         initializeBodyParts();
         intializeWeeklyFatigue();
         printWeeklyFatigue();
@@ -32,6 +20,7 @@ class Program
 
     private static void initializeBodyParts()
     {
+      /*
         muscleGroup abs;
         abs.MV = 0;
         abs.MEV = 0;
@@ -108,36 +97,30 @@ class Program
         glutes.MAVMin = 4;
         glutes.MAVMax = 12;
         glutes.MRV = 16;
-
+*/
     }
 
     private static void intializeWeeklyFatigue()
     {
-        weeklyFatigue.Add("chest", 0);
+        weeklyFatigue.put("chest", 0);
 
-        weeklyFatigue.Add("biceps", 0);
-        weeklyFatigue.Add("triceps", 0);
+        weeklyFatigue.put("biceps", 0);
+        weeklyFatigue.put("triceps", 0);
 
-        weeklyFatigue.Add("frontDelt", 0);
-        weeklyFatigue.Add("sideDelt", 0);
-        weeklyFatigue.Add("rearDelt", 0);
+        weeklyFatigue.put("frontDelt", 0);
+        weeklyFatigue.put("sideDelt", 0);
+        weeklyFatigue.put("rearDelt", 0);
 
-        weeklyFatigue.Add("quads", 0);
-        weeklyFatigue.Add("hamstrings", 0);
-        weeklyFatigue.Add("glutes", 0);
+        weeklyFatigue.put("quads", 0);
+        weeklyFatigue.put("hamstrings", 0);
+        weeklyFatigue.put("glutes", 0);
 
-        weeklyFatigue.Add("abs", 0);
-        weeklyFatigue.Add("calves", 0);
+        weeklyFatigue.put("abs", 0);
+        weeklyFatigue.put("calves", 0);
     }
 
     public static void printWeeklyFatigue()
     {
-        string output = "";
-        foreach (KeyValuePair<string, int> temp in weeklyFatigue)
-        {
-            output += string.Format("MuscleGroup = {0}, Weekly sets programmed = {1}", temp.Key, temp.Value);
-            output += "\n";
-        }
-        Console.WriteLine(output);
+        System.out.println(weeklyFatigue);
     }
 }
