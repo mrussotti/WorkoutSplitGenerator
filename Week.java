@@ -2,19 +2,22 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class Week
-  //simply an array of day objects
+  
 {
-
+    //Each week is an array of day objects coupled with a summerry of weekly volume
      private static Day [] thisWeek;
+     private static Map<String, Integer> weeklyFatigue;
 
     public Week()
     {
-        thisWeek= new Day [7];    
+      weeklyFatigue= new HashMap<String, Integer>();
+      intializeWeeklyFatigue();
+
+      thisWeek= new Day [7];    
       for(int i=0;i<thisWeek.length;i++){
         thisWeek[i]=new Day();
       }
         //initializeBodyParts();//fix this method
-        //intializeWeeklyFatigue();
         printWeeklyFatigue();
         //need to add info for back muscle groups
 
@@ -25,18 +28,40 @@ public class Week
 
     public static void printWeeklyFatigue()
     {
-      for(int i=0;i<thisWeek.length;i++){
-        thisWeek[i].print();
+      for (Map.Entry<String, Integer> me : weeklyFatigue.entrySet()) {
+        System.out.print(me.getKey() + ":");
+        System.out.println(me.getValue());
       }
     }
     
 
-  public void ConstructWeekObject(){
-    printWeeklyFatigue();
-    //makes a week array full of days
-
-    //construct the initial week object with all exercises
-
-    //later weeks repeat exercises but make sure to progressively overload
+  public void ConstructFirstWeek(){
+    
   }
+
+  private static void intializeWeeklyFatigue()
+    {
+      
+        weeklyFatigue.put("chest", 0);
+
+        weeklyFatigue.put("biceps", 0);
+        weeklyFatigue.put("triceps", 0);
+
+        weeklyFatigue.put("frontDelt", 0);
+        weeklyFatigue.put("sideDelt", 0);
+        weeklyFatigue.put("rearDelt", 0);
+
+        weeklyFatigue.put("quads", 0);
+        weeklyFatigue.put("hamstrings", 0);
+        weeklyFatigue.put("glutes", 0);
+
+        weeklyFatigue.put("abs", 0);
+        weeklyFatigue.put("calves", 0);
+
+        weeklyFatigue.put("lats", 0);
+        weeklyFatigue.put("rhomboids", 0);
+        weeklyFatigue.put("traps", 0);
+        weeklyFatigue.put("spineErectors", 0);
+      
+    }
 }
