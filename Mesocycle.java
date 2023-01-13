@@ -9,12 +9,13 @@ public class Mesocycle{
     for(int i=0; i<numWeeks; i++){
       meso[i]=new Week();
     }
-    fillWeeks();
+    BroSplit();
   }
 
-  private void fillWeeks(){
+  //constructs a bro split
+  private void BroSplit(){
     for(int i=0; i<numWeeks; i++){
-      meso[i].ConstructWeekObject();//fill this out in Week class
+      meso[i].ConstructFirstWeek();//fill this out in Week class
     }
   }
 
