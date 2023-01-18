@@ -15,7 +15,7 @@ public class Mesocycle{
   //constructs a bro split
   private void BroSplit(){
     for(int i=0; i<numWeeks; i++){
-      meso[i].ConstructFirstWeek();//fill this out in Week class
+      meso[i].ConstructBroSplit();//fill this out in Week class
     }
   }
 
