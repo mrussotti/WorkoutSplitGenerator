@@ -35,8 +35,14 @@ public class Week
     }
     
 
-  public void ConstructFirstWeek(){
-    
+  public void ConstructBroSplit(){
+      thisWeek[0].ChestDay();
+      thisWeek[1].BackDay();
+      thisWeek[2].RestDay();
+      thisWeek[3].ShouldersDay();
+      thisWeek[4].ArmsDay();
+      thisWeek[5].RestDay();
+      thisWeek[6].LegDay();
   }
 
   private static void intializeWeeklyFatigue()
