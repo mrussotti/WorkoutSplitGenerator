@@ -5,39 +5,37 @@ public class Data{
   //holds all the data complexity for this program
   private static final int NUM_BODY_PARTS = 11; // Number of muscle groups
   private static final String[] BODY_PARTS = {"abs", "calves", "biceps", "triceps", "chest", "frontDelts", "sideDelts", "rearDelts", "quads", "hamstrings", "glutes", "lats", "rhomboids", "traps", "SpineErectors"};
-  private static List<Exercise> exercises;
+private static Map<String, Exercise> mapOfAllExercises;
   private static Map<String, MuscleGroups> muscleGroupFatigueNumbers;
 
   
   public Data(){
     muscleGroupFatigueNumbers = new HashMap<>();
-    exercises = new ArrayList<>(); 
+    mapOfAllExercises = new HashMap<>();
+    addExercises();
   }
 
   //Add stuff for specific muscles in triceps and biceps
-    public static List<Exercise> addExercises() {
-            
-      exercises.add(new Exercise("Bench Press", List.of("chest", "triceps", "frontDelts")));
-      exercises.add(new Exercise("Barbell Curl", List.of("biceps")));
-      exercises.add(new Exercise("Cable Tricep Extension", List.of("triceps")));
-      exercises.add(new Exercise("Seated Calf Raise", List.of("calves")));
-      exercises.add(new Exercise("Deadlift", List.of("lats", "rhomboids", "traps", "spinalErectors", "hamstrings", "glutes", "forearms")));
-      exercises.add(new Exercise("Squat", List.of("quads", "hamstrings", "glutes", "lower back")));
-      exercises.add(new Exercise("Lunges", List.of("quads", "hamstrings", "glutes")));
-      exercises.add(new Exercise("Leg Press", List.of("quads", "hamstrings")));
-      exercises.add(new Exercise("Shoulder Press", List.of("frontDelts", "sideDelts", "triceps")));
-      exercises.add(new Exercise("Push-ups", List.of("chest", "triceps", "frontDelts")));
-      exercises.add(new Exercise("Pull-ups", List.of("lats", "rhomboids", "traps")));
-      exercises.add(new Exercise("Lat Pulldown", List.of("lats", "rhomboids")));
-      exercises.add(new Exercise("Seated Row", List.of("lats", "rhomboids", "traps")));
-      exercises.add(new Exercise("Bicep Curl", List.of("biceps")));
-      exercises.add(new Exercise("Tricep Dips", List.of("triceps")));
-      exercises.add(new Exercise("Crunches", List.of("abs")));
-      exercises.add(new Exercise("Plank", List.of("abs")));
-      exercises.add(new Exercise("Side Plank", List.of("abs")));
-
-      return exercises;
-    }
+    public static void addExercises() {
+    mapOfAllExercises.put("Bench Press", new Exercise("Bench Press", List.of("chest", "triceps", "frontDelts")));
+    mapOfAllExercises.put("Barbell Curl", new Exercise("Barbell Curl", List.of("biceps")));
+    mapOfAllExercises.put("Cable Tricep Extension", new Exercise("Cable Tricep Extension", List.of("triceps")));
+    mapOfAllExercises.put("Seated Calf Raise", new Exercise("Seated Calf Raise", List.of("calves")));
+    mapOfAllExercises.put("Deadlift", new Exercise("Deadlift", List.of("lats", "rhomboids", "traps", "spinalErectors", "hamstrings", "glutes", "forearms")));
+    mapOfAllExercises.put("Squat", new Exercise("Squat", List.of("quads", "hamstrings", "glutes", "lower back")));
+    mapOfAllExercises.put("Lunges", new Exercise("Lunges", List.of("quads", "hamstrings", "glutes")));
+    mapOfAllExercises.put("Leg Press", new Exercise("Leg Press", List.of("quads", "hamstrings")));
+    mapOfAllExercises.put("Shoulder Press", new Exercise("Shoulder Press", List.of("frontDelts", "sideDelts", "triceps")));
+    mapOfAllExercises.put("Push-ups", new Exercise("Push-ups", List.of("chest", "triceps", "frontDelts")));
+    mapOfAllExercises.put("Pull-ups", new Exercise("Pull-ups", List.of("lats", "rhomboids", "traps")));
+    mapOfAllExercises.put("Lat Pulldown", new Exercise("Lat Pulldown", List.of("lats", "rhomboids")));
+    mapOfAllExercises.put("Seated Row", new Exercise("Seated Row", List.of("lats", "rhomboids", "traps")));
+    mapOfAllExercises.put("Bicep Curl", new Exercise("Bicep Curl", List.of("biceps")));
+    mapOfAllExercises.put("Tricep Dips", new Exercise("Tricep Dips", List.of("triceps")));
+    mapOfAllExercises.put("Crunches", new Exercise("Crunches", List.of("abs")));
+    mapOfAllExercises.put("Plank", new Exercise("Plank", List.of("abs")));
+    mapOfAllExercises.put("Side Plank", new Exercise("Side Plank", List.of("abs")));
+}
 
   public int getNumBodyParts(){
     return NUM_BODY_PARTS;
@@ -47,8 +45,8 @@ public class Data{
     return BODY_PARTS;
   }
 
-  public List<Exercise> getExercises(){
-    return exercises;
+  public static Map<String, Exercise> getExercisesList(){
+    return mapOfAllExercises;
   }
 
 private static void muscleInfo() {

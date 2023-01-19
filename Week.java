@@ -34,7 +34,7 @@ public class Week
       }
     }
     
-
+  
   public void ConstructBroSplit(){
       thisWeek[0].ChestDay();
       thisWeek[1].BackDay();
@@ -70,4 +70,9 @@ public class Week
         weeklyFatigue.put("spineErectors", 0);
       
     }
+  public void print(){
+    for(int i=0;i<thisWeek.length;i++){
+        thisWeek[i].print();
+      }
+  }
 }

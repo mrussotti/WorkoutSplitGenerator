@@ -20,4 +20,8 @@ public class Exercise {
   public List<String> getMuscleGroups() {
     return muscleGroups;
   }
+
+  public void print(){
+    System.out.println("Exercise Name: " + name + " [] Muscle groups hit: " + muscleGroups.toString());
+  }
 }
