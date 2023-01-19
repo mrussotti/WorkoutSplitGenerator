@@ -20,7 +20,9 @@ public class Mesocycle{
   }
 
   public void print(){
-        System.out.print("nuts");
+    for(int i=0; i<numWeeks; i++){
+      meso[i].print();//fill this out in Week class
+    }
   }
   
 }
